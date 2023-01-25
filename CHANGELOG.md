@@ -37,6 +37,6 @@
 
 * Correção de Null Safety.
 
-## [1.1] - Readme.
+## [1.1.0] - Readme.
 
 * Added Implementation of Buttons for Navigation inside tutorial

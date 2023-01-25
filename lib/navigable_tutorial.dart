@@ -1,4 +1,4 @@
-library tutorial;
+library navigable_tutorial;
 
 export './src/controller/tutorial_tutorial.dart';
 export './src/models/shape_models.dart';

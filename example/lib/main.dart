@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial/tutorial.dart';
+import 'package:tutorial/navigable_tutorial.dart';
 
 main() {
   runApp(MaterialApp(
