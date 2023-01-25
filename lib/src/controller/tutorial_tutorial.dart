@@ -1,11 +1,10 @@
 library tutorial;
 
 import 'package:flutter/material.dart';
-import 'package:tutorial/src/models/tutorial_itens.dart';
+import 'package:tutorial/src/models/tutorial_items.dart';
 import 'package:tutorial/src/painter/painter.dart';
 
 class Tutorial {
-  //FUNÇÃO QUE EXIBE O TUTORIAL
   static showTutorial(BuildContext context, List<TutorialItem> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
@@ -52,24 +51,44 @@ class Tutorial {
                           mainAxisAlignment: element.mainAxisAlignment,
                           children: [
                             ...element.children!,
-                            GestureDetector(
-                              child: element.widgetNext ??
-                                  Text(
-                                    "NEXT",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                              onTap: () {
-                                entrys[count].remove();
-                                count++;
-                                if (count != entrys.length) {
-                                  overlayState?.insert(entrys[count]);
-                                }
-                              },
-                            ),
                           ],
                         ),
                       ),
-                    )
+                    ),
+                    Positioned(
+                        top: element.buttonBarTop ?? size.height / 1.1,
+                        bottom: element.buttonBarBottom,
+                        left: element.buttonBarLeft,
+                        right: element.buttonBarRight,
+                        child: Container(
+                          width: size.width * 0.8,
+                          child: ButtonBar(
+                            alignment: null,
+                            layoutBehavior: ButtonBarLayoutBehavior.padded,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () {
+                                    entrys[count].remove();
+                                    count--;
+                                    if (count >= 0) {
+                                      overlayState?.insert(entrys[count]);
+                                    }
+                                  },
+                                  child: element.widgetPrev,
+                                  style: element.buttonStyle),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    entrys[count].remove();
+                                    count++;
+                                    if (count != entrys.length) {
+                                      overlayState?.insert(entrys[count]);
+                                    }
+                                  },
+                                  child: element.widgetNext,
+                                  style: element.buttonStyle),
+                            ],
+                          ),
+                        ))
                   ],
                 ),
               ),
@@ -82,15 +101,12 @@ class Tutorial {
     overlayState?.insert(entrys[0]);
   }
 
-  //FUNÇÃO PARA CAPTURAR A POSIÇÃO DO COMPONENTE
   static Offset _capturePositionWidget(GlobalKey? key) {
     RenderBox? renderPosition =
         key!.currentContext!.findRenderObject() as RenderBox;
 
     return renderPosition.localToGlobal(Offset.zero);
   }
-
-  //FUNÇÃO PARA CAPTURAR AO TAMANHO DO COMPONENTE
 
   static Size _getSizeWidget(GlobalKey? key) {
     RenderBox? renderSize =

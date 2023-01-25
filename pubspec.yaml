@@ -1,7 +1,7 @@
 name: tutorial
 description: THE BEST AND SIMPLE THE TUTORIAL OVERLAY .
 version: 1.0.9
-homepage: https://github.com/warlesoncandido
+homepage: https://github.com/LucaBarden
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
