@@ -1,6 +1,6 @@
-name: tutorial
-description: THE BEST AND SIMPLE THE TUTORIAL OVERLAY .
-version: 1.0.9
+name: navigable-tutorial
+description: Navigable Tutorial Overlay Implementation.
+version: 1.1
 homepage: https://github.com/LucaBarden
 
 environment:

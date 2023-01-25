@@ -22,7 +22,7 @@ class Tutorial {
                       entrys[count].remove();
                       count++;
                       if (count != entrys.length) {
-                        overlayState?.insert(entrys[count]);
+                        overlayState.insert(entrys[count]);
                       }
                     }
                   : () {},
@@ -71,7 +71,7 @@ class Tutorial {
                                     entrys[count].remove();
                                     count--;
                                     if (count >= 0) {
-                                      overlayState?.insert(entrys[count]);
+                                      overlayState.insert(entrys[count]);
                                     }
                                   },
                                   child: element.widgetPrev,
@@ -81,7 +81,7 @@ class Tutorial {
                                     entrys[count].remove();
                                     count++;
                                     if (count != entrys.length) {
-                                      overlayState?.insert(entrys[count]);
+                                      overlayState.insert(entrys[count]);
                                     }
                                   },
                                   child: element.widgetNext,
@@ -98,7 +98,7 @@ class Tutorial {
       );
     });
 
-    overlayState?.insert(entrys[0]);
+    overlayState.insert(entrys[0]);
   }
 
   static Offset _capturePositionWidget(GlobalKey? key) {
