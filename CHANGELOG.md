@@ -40,3 +40,7 @@
 ## [1.1.0] - Readme.
 
 * Added Implementation of Buttons for Navigation inside tutorial
+
+## [1.1.1] - Readme.
+
+* Fixed Layout of ButtonBar

@@ -56,39 +56,40 @@ class Tutorial {
                       ),
                     ),
                     Positioned(
-                        top: element.buttonBarTop ?? size.height / 1.1,
-                        bottom: element.buttonBarBottom,
-                        left: element.buttonBarLeft,
-                        right: element.buttonBarRight,
-                        child: Container(
-                          width: size.width * 0.8,
-                          child: ButtonBar(
-                            alignment: null,
-                            layoutBehavior: ButtonBarLayoutBehavior.padded,
-                            children: [
-                              ElevatedButton(
-                                  onPressed: () {
-                                    entrys[count].remove();
-                                    count--;
-                                    if (count >= 0) {
-                                      overlayState.insert(entrys[count]);
-                                    }
-                                  },
-                                  child: element.widgetPrev,
-                                  style: element.buttonStyle),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    entrys[count].remove();
-                                    count++;
-                                    if (count != entrys.length) {
-                                      overlayState.insert(entrys[count]);
-                                    }
-                                  },
-                                  child: element.widgetNext,
-                                  style: element.buttonStyle),
-                            ],
-                          ),
-                        ))
+                      top: element.buttonBarTop ?? size.height / 1.1,
+                      bottom: element.buttonBarBottom,
+                      left: element.buttonBarLeft,
+                      right: element.buttonBarRight,
+                      child: Container(
+                        width: size.width,
+                        child: ButtonBar(
+                          alignment: MainAxisAlignment.spaceBetween,
+                          layoutBehavior: ButtonBarLayoutBehavior.padded,
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  entrys[count].remove();
+                                  count--;
+                                  if (count >= 0) {
+                                    overlayState.insert(entrys[count]);
+                                  }
+                                },
+                                child: element.widgetPrev,
+                                style: element.buttonStyle),
+                            ElevatedButton(
+                                onPressed: () {
+                                  entrys[count].remove();
+                                  count++;
+                                  if (count != entrys.length) {
+                                    overlayState.insert(entrys[count]);
+                                  }
+                                },
+                                child: element.widgetNext,
+                                style: element.buttonStyle)
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
